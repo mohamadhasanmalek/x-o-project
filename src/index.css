@@ -1,13 +1,96 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-image: url ('sky.jpg');
+  background-repeat:round;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
 }
+
+h1 {
+  margin: 2rem;
+  text-align: center;
+  font-size: 6rem;
+  color:whitesmoke;
+}
+
+.board {
+  border: 10px solid black;
+  background: black;
+  width: 450px;
+  height: 450px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 10px;
+}
+
+.squares {
+  background: rgb(71, 3, 68);
+  border: none;
+  font-size: 5rem;
+  /* font-weight: 800; */
+  cursor: pointer;
+  outline: none;
+}
+
+
+button:hover {
+  background: rgba(143, 6, 136, 0.836);
+}
+
+.X {
+  color: greenyellow;
+}
+
+.O {
+  color: rgb(255, 0, 64);
+}
+
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+}
+
+h3 {
+  padding: 1rem;
+  color: rgb(255, 217, 0);
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+.info-wrapper button {
+  background: #272727;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.7rem;
+  margin: 0.5rem 1rem;
+  font-size: large;
+}
+
+.info-wrapper button:hover {
+ opacity: 0.9;
+}
+
+
+.sweet-alert 
+{
+   background-color: #2f2f2f96;
+};
