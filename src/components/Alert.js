@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2/dist/sweetalert2' // js-only, no styles
+import Swal from 'sweetalert2/dist/sweetalert2'
 
 const SwalWithoutAnimation = Swal.mixin({
   showClass: {

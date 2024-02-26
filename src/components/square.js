@@ -1,16 +1,12 @@
 import React from "react";
 
-const Square = ({ value, onClick }) => {
-  const style = value ? `squares ${value}` : `squares`;
+const Square = (props) => {
+  const style = props.value ? `squares ${props.value}` : `squares`;
 
   return (
-    <button className={style} onClick={onClick}>
-      {value}
+    <button className={style} onClick={props.onClick}>
+      {props.value}
     </button>
   );
 };
-{squares.map((square, i) => (
-    <Square key={i} value={square} onClick={() => onClick(i)} />
-))}
-
 export default Square;

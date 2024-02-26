@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { calculateWinner } from "helper";
-import Board from "board";
+import { calculateWinner } from "../helper";
+import Board from "./Board";
+
 
 const Game = () => {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -8,6 +9,7 @@ const Game = () => {
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
   const xO = xIsNext ? "X" : "O";
+
 
   const handleClick = (i) => {
     const historyPoint = history.slice(0, stepNumber + 1);
@@ -29,7 +31,7 @@ const Game = () => {
 
   const renderMoves = () =>
     history.map((_step, move) => {
-      const destination = move ? `Go to move #${move}` : "Go to Start";
+      const destination = move ? ` Go To Move ${move}` : " Go To Start ";
       return (
         <li key={move}>
           <button onClick={() => jumpTo(move)}>{destination}</button>
@@ -39,14 +41,15 @@ const Game = () => {
 
   return (
     <>
-      <h1>Tic Tac Toe</h1>
       <Board squares={history[stepNumber]} onClick={handleClick} />
       <div className="info-wrapper">
         <div>
-          <h3>History</h3>
+          <h3>Past Moves</h3>
           {renderMoves()}
         </div>
-        <h3>{winner ? 'Winner is ' + winner : "Next Player : " + xO}</h3>
+        <h3>
+          { winner ? "Winner is : " + winner : " Next Player : " + xO }
+        </h3>
       </div>
     </>
   );
